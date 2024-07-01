@@ -1,7 +1,7 @@
-import React from 'react';
-import { FlatList, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { Corredor } from '../types/types';
-import { theme } from '../theme';
+import React from "react";
+import { FlatList, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { Corredor } from "../types/types";
+import { theme } from "../theme";
 
 interface Props {
   corredores: Corredor[];
@@ -9,7 +9,11 @@ interface Props {
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const CorredorList: React.FC<Props> = ({ corredores, handleSearchCorredor, setInputValue }) => {
+const CorredorList: React.FC<Props> = ({
+  corredores,
+  handleSearchCorredor,
+  setInputValue,
+}) => {
   return (
     <FlatList
       data={corredores}
@@ -23,7 +27,9 @@ const CorredorList: React.FC<Props> = ({ corredores, handleSearchCorredor, setIn
             handleSearchCorredor(cc);
           }}
         >
-          <Text style={styles.corredorText}>{item.cc} - {item.nc}</Text>
+          <Text style={styles.corredorText}>
+            {item.cc} - {item.nc}
+          </Text>
         </TouchableOpacity>
       )}
     />

@@ -1,7 +1,6 @@
 export interface Corredor {
   cc: string;
   nc: string;
-
 }
 
 export type Parada = {

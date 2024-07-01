@@ -1,10 +1,18 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, FlatList, Keyboard } from 'react-native';
-import { theme } from '../theme';
-import { Corredor } from '../types/types';
+import React from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  FlatList,
+  Keyboard,
+} from "react-native";
+import { theme } from "../theme";
+import { Corredor } from "../types/types";
 
 interface Props {
-  selectedOption: 'linha' | 'corredor' | 'empresa';
+  selectedOption: "linha" | "corredor" | "empresa";
   inputValue: string;
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
   handleSearchLinha: (inputValue: string) => void;
@@ -21,12 +29,12 @@ const SearchInput: React.FC<Props> = ({
   corredores,
 }) => {
   const handleKeyPress = (key: string) => {
-    if (key === 'Enter') {
+    if (key === "Enter") {
       switch (selectedOption) {
-        case 'linha':
+        case "linha":
           handleSearchLinha(inputValue);
           break;
-        case 'corredor':
+        case "corredor":
           handleSearchCorredor(inputValue);
           break;
         default:
@@ -39,23 +47,25 @@ const SearchInput: React.FC<Props> = ({
   return (
     <View style={styles.inputContainer}>
       <Text style={styles.inputLabel}>
-        {selectedOption === 'linha' ? 'Buscar Linha 🚌:' :
-        selectedOption === 'corredor' ? 'Selecione o Corredor 🛣️:' :
-          'Selecione a Empresa 🏢:'}
+        {selectedOption === "linha"
+          ? "Buscar Linha 🚌:"
+          : selectedOption === "corredor"
+            ? "Selecione o Corredor 🛣️:"
+            : "Selecione a Empresa 🏢:"}
       </Text>
 
-      {selectedOption === 'linha' && (
+      {selectedOption === "linha" && (
         <>
           <TextInput
             style={styles.input}
             placeholder={`Digite o ${selectedOption}`}
             value={inputValue}
             onChangeText={(text) => setInputValue(text)}
-            onSubmitEditing={() => handleKeyPress('Enter')}
+            onSubmitEditing={() => handleKeyPress("Enter")}
             blurOnSubmit={true}
           />
           <Text style={styles.inputDescription}>
-            {selectedOption === 'linha' && 'Exemplo: 8000, Lapa ou Ramos'}
+            {selectedOption === "linha" && "Exemplo: 8000, Lapa ou Ramos"}
           </Text>
           <TouchableOpacity
             style={styles.button}
@@ -66,7 +76,7 @@ const SearchInput: React.FC<Props> = ({
         </>
       )}
 
-      {selectedOption === 'corredor' && (
+      {selectedOption === "corredor" && (
         <FlatList
           data={corredores}
           keyExtractor={(item) => item.cc.toString()}
@@ -79,12 +89,13 @@ const SearchInput: React.FC<Props> = ({
                 handleSearchCorredor(item.nc);
               }}
             >
-              <Text style={styles.corredorText}>{item.cc} - {item.nc}</Text>
+              <Text style={styles.corredorText}>
+                {item.cc} - {item.nc}
+              </Text>
             </TouchableOpacity>
           )}
         />
       )}
-
     </View>
   );
 };
@@ -92,7 +103,7 @@ const SearchInput: React.FC<Props> = ({
 const styles = StyleSheet.create({
   inputContainer: {
     marginBottom: 20,
-    width: '100%',
+    width: "100%",
   },
   inputLabel: {
     fontSize: 16,
@@ -117,7 +128,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 30,
   },
   buttonText: {
@@ -142,7 +153,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     backgroundColor: theme.colors.gray[600],
     borderRadius: 10,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,

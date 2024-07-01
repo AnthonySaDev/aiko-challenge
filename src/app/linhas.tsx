@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
-import axios from 'axios';
-import { router, useLocalSearchParams, useNavigation } from 'expo-router';
-import { theme } from '../theme';
-import { Ionicons } from '@expo/vector-icons';
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
+import axios from "axios";
+import { router, useLocalSearchParams, useNavigation } from "expo-router";
+import { theme } from "../theme";
+import { Ionicons } from "@expo/vector-icons";
 
 interface Linha {
-  cl: number; 
-  lc: boolean; 
+  cl: number;
+  lc: boolean;
   lt: string;
   tl: number;
-  sl: number; 
-  tp: string; 
+  sl: number;
+  tp: string;
   ts: string;
 }
 
@@ -21,10 +27,12 @@ const Linhas: React.FC = () => {
   const navigation = useNavigation();
   const handleBuscaPorTermo = async () => {
     try {
-      const response = await axios.get<Linha[]>(`https://aiko-olhovivo-proxy.aikodigital.io/Linha/Buscar?termosBusca=${params.item}`);
+      const response = await axios.get<Linha[]>(
+        `https://aiko-olhovivo-proxy.aikodigital.io/Linha/Buscar?termosBusca=${params.item}`,
+      );
       setLinhas(response.data);
     } catch (error) {
-      console.log('Erro ao buscar linhas:', error);
+      console.log("Erro ao buscar linhas:", error);
     }
   };
 
@@ -32,17 +40,23 @@ const Linhas: React.FC = () => {
     handleBuscaPorTermo();
   }, []);
 
-
   const handleSearchParadas = (item: number) => {
     router.push({
-      pathname: '/paradas',
-      params: { cl: item},
+      pathname: "/paradas",
+      params: { cl: item },
     });
   };
 
   const renderItem = ({ item }: { item: Linha }) => (
-    <TouchableOpacity style={styles.itemContainer} onPress={() => {handleSearchParadas(item.cl)}}>
-      <Text style={[styles.itemText, { fontFamily: theme.fontFamily.bold }]}>Código: {item.cl}</Text>
+    <TouchableOpacity
+      style={styles.itemContainer}
+      onPress={() => {
+        handleSearchParadas(item.cl);
+      }}
+    >
+      <Text style={[styles.itemText, { fontFamily: theme.fontFamily.bold }]}>
+        Código: {item.cl}
+      </Text>
       <Text style={styles.itemText}>Letreiro: {item.lt}</Text>
       <Text style={styles.itemText}>Terminal: {item.tp}</Text>
       <Text style={styles.itemText}>Sentido: {item.ts}</Text>
@@ -51,11 +65,14 @@ const Linhas: React.FC = () => {
 
   return (
     <View style={styles.container}>
-    <View style={styles.header}>
-    <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-      <Ionicons name="arrow-back" size={24} color="white" />
-    </TouchableOpacity>
-      <Text style={styles.title}>Linhas Disponíveis para {params.item}</Text>
+      <View style={styles.header}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.backButton}
+        >
+          <Ionicons name="arrow-back" size={24} color="white" />
+        </TouchableOpacity>
+        <Text style={styles.title}>Linhas Disponíveis para {params.item}</Text>
       </View>
       <FlatList
         data={linhas}
@@ -73,17 +90,17 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     paddingTop: 60,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: "#f0f0f0",
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly",
     marginVertical: 12,
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   backButton: {
     backgroundColor: theme.colors.dark_blue,
@@ -91,16 +108,16 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   list: {
-    width: '100%',
+    width: "100%",
   },
   itemContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 8,
     padding: 16,
     marginBottom: 12,
     elevation: 4,
-    width: '80%',
-    alignSelf: 'center',
+    width: "80%",
+    alignSelf: "center",
   },
   itemText: {
     fontSize: 16,

@@ -1,13 +1,37 @@
+import React from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker, Region } from "react-native-maps";
 import { Parada } from "../types/types";
 import { Ionicons } from "@expo/vector-icons";
 
-const MapViewContainer = ({ position, paradas, handleSelectParada, mapRegion }: any) => (
+interface Position {
+  hr: string;
+  vs: {
+    p: string;
+    py: number;
+    px: number;
+  }[];
+}
+
+interface MapViewContainerProps {
+  position: Position | null;
+  paradas: Parada[];
+  handleSelectParada: (parada: Parada) => void;
+  mapRegion: Region;
+  selectedParada: Parada | null;
+  previsoesPorParada: any;
+}
+
+const MapViewContainer: React.FC<MapViewContainerProps> = ({
+  position,
+  paradas,
+  handleSelectParada,
+  mapRegion,
+}) => (
   <View style={styles.mapContainer}>
     {position ? (
       <MapView style={styles.map} initialRegion={mapRegion} zoomEnabled>
-        {paradas.map((parada: Parada) => (
+        {paradas.map((parada) => (
           <Marker
             key={parada.cp}
             coordinate={{ latitude: parada.py, longitude: parada.px }}
@@ -17,7 +41,7 @@ const MapViewContainer = ({ position, paradas, handleSelectParada, mapRegion }: 
             <Ionicons name="home-sharp" size={24} color="black" />
           </Marker>
         ))}
-        {position.vs.map((bus: any) => (
+        {position.vs.map((bus) => (
           <Marker
             key={bus.p}
             coordinate={{ latitude: bus.py, longitude: bus.px }}
@@ -39,10 +63,10 @@ const MapViewContainer = ({ position, paradas, handleSelectParada, mapRegion }: 
 
 const styles = StyleSheet.create({
   mapContainer: {
-    width: '100%',
+    width: "100%",
     height: 350,
     borderRadius: 8,
-    overflow: 'hidden',
+    overflow: "hidden",
     marginBottom: 16,
   },
   map: {
@@ -50,10 +74,10 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     ...StyleSheet.absoluteFillObject,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(255, 255, 255, 0.8)",
   },
-})
+});
 
-export default MapViewContainer
+export default MapViewContainer;

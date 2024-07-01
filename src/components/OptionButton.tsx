@@ -1,32 +1,37 @@
-import React from 'react';
-import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import { theme } from '../theme';
+import React from "react";
+import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
+import { theme } from "../theme";
 
 interface Props {
-  iconName: 'bus' | 'road' | 'building';
+  iconName: "bus" | "road" | "building";
   isSelected: boolean;
   title: string;
   onPress: () => void;
 }
 
-const OptionButton: React.FC<Props> = ({ iconName, isSelected, onPress, title }) => {
+const OptionButton: React.FC<Props> = ({
+  iconName,
+  isSelected,
+  onPress,
+  title,
+}) => {
   return (
     <View style={styles.optionButtonContainer}>
-    <Text style={styles.title}>{title}</Text>
-    <TouchableOpacity
-      style={[styles.optionButton, isSelected && styles.selectedOption]}
-      onPress={onPress}
-    >
-      <FontAwesome name={iconName} size={24} color="white" />
-    </TouchableOpacity>
+      <Text style={styles.title}>{title}</Text>
+      <TouchableOpacity
+        style={[styles.optionButton, isSelected && styles.selectedOption]}
+        onPress={onPress}
+      >
+        <FontAwesome name={iconName} size={24} color="white" />
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   optionButtonContainer: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   title: {
     fontSize: 13,
@@ -38,10 +43,10 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     backgroundColor: theme.colors.dark_green,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     elevation: 5,
-    shadowColor: '#000000',
+    shadowColor: "#000000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 2,

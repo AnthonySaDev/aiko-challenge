@@ -1,20 +1,27 @@
-import { View, Text, ActivityIndicator, StyleSheet, TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { useLocalSearchParams, useNavigation } from 'expo-router'
-import axios from 'axios';
-import MapView, { Marker } from 'react-native-maps';
-import { theme } from '../theme';
-import { Ionicons } from '@expo/vector-icons';
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
+import React, { useEffect, useState } from "react";
+import { useLocalSearchParams, useNavigation } from "expo-router";
+import axios from "axios";
+import MapView, { Marker } from "react-native-maps";
+import { theme } from "../theme";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Corredores() {
-  
-  const codigoCorredor = useLocalSearchParams()
+  const codigoCorredor = useLocalSearchParams();
   const [corredorDetails, setCorredorDetails] = useState(null);
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   useEffect(() => {
     const fetchCorredorDetails = async () => {
       try {
-        const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=corredor${codigoCorredor.nc}&key=AIzaSyAShYytzPWQdXUMhCf1p-Y6pMUxHW53fBI`);
+        const response = await axios.get(
+          `https://maps.googleapis.com/maps/api/geocode/json?address=corredor${codigoCorredor.nc}&key=AIzaSyAShYytzPWQdXUMhCf1p-Y6pMUxHW53fBI`,
+        );
         if (response.data.results.length > 0) {
           const result = response.data.results[0];
           const nome = result.formatted_address;
@@ -24,7 +31,7 @@ export default function Corredores() {
           setCorredorDetails({ nome, localizacao, latitude, longitude });
         }
       } catch (error) {
-        console.error('Erro ao buscar detalhes do corredor:', error);
+        console.error("Erro ao buscar detalhes do corredor:", error);
       }
     };
 
@@ -41,11 +48,14 @@ export default function Corredores() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-      <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-      <Ionicons name="arrow-back" size={24} color="white" />
-    </TouchableOpacity>
-      <Text style={styles.title}>Detalhes do Corredor</Text>
-    </View>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.backButton}
+        >
+          <Ionicons name="arrow-back" size={24} color="white" />
+        </TouchableOpacity>
+        <Text style={styles.title}>Detalhes do Corredor</Text>
+      </View>
       <Text style={styles.text}>Nome: {corredorDetails.nome}</Text>
       <MapView
         style={styles.map}
@@ -57,25 +67,28 @@ export default function Corredores() {
         }}
       >
         <Marker
-          coordinate={{ latitude: corredorDetails.latitude, longitude: corredorDetails.longitude }}
+          coordinate={{
+            latitude: corredorDetails.latitude,
+            longitude: corredorDetails.longitude,
+          }}
           title={corredorDetails.nome}
         />
       </MapView>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-    gap:14,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    gap: 14,
     marginBottom: 20,
   },
   backButton: {
@@ -85,12 +98,12 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
   },
   text: {
@@ -98,7 +111,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   map: {
-    width: '100%',
+    width: "100%",
     height: 400,
     marginTop: 20,
   },
