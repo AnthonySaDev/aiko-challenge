@@ -32,38 +32,50 @@ Meu sistema de monitoramento de ônibus em São Paulo utiliza a API do Olho Vivo
 
 - SplashScreen
   
-<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/splash.png" alt="Splash Screen" width="300">
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/splash.png" alt="Splash Screen" width="500">
 
 - Onboard
 
-<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/onboard.png" alt="Onboard Screen" width="300">
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/onboard.png" alt="Onboard Screen" width="500">
 
 - Dashboard
   
-<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashboard.png" alt="Dashboard Screen" width="300">
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashboard.png" alt="Dashboard Screen" width="500">
 
 - Dashboard - Rotas
   
-<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashbord-rotas.png" alt="Dashboard Rotas Screen" width="300">
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashbord-rotas.png" alt="Dashboard Rotas Screen" width="500">
 
 - Dashboard - Corredores
   
-<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashboard-corredores.png" alt="Dashboard Corredores Screen" width="300">
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashboard-corredores.png" alt="Dashboard Corredores Screen" width="500">
 
 - Detalhes dos Corredores
   
-<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/detalhes.png" alt="Detalhes dos Corredores Screen" width="300">
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/detalhes.png" alt="Detalhes dos Corredores Screen" width="500">
 
 - Listagem das Linhas para a Rota selecionada
   
-<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/linhas.png" alt="Listagem das Linhas Screen" width="300">
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/linhas.png" alt="Listagem das Linhas Screen" width="500">
 
 - Monitoramento de Ônibus
   
-<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/monitoramento.png" alt="Monitoramento de Ônibus Screen" width="300">
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/monitoramento.png" alt="Monitoramento de Ônibus Screen" width="500">
 
 
 ## Demonstração
 
 [Assista ao vídeo de demonstração](https://youtu.be/9MHbP2RgKfI) do aplicativo BusLive.
 
+
+## Aprendizados
+
+Durante o desenvolvimento deste projeto, adquiri valiosos conhecimentos e habilidades que foram fundamentais para a implementação de funcionalidades robustas e eficientes. Algumas das principais lições aprendidas incluem:
+
+- Atualização em Tempo Real: Implementar atualizações em tempo real foi essencial para garantir que os dados exibidos no aplicativo refletissem com precisão a localização e o status atualizados dos ônibus. A integração com a API do Olho Vivo permitiu receber e processar informações, proporcionando uma experiência de usuário mais dinâmica e atualizada.
+
+- Filtragem de Dados em Requisições: A habilidade de filtrar e processar dados diretamente nas requisições à API foi crucial para otimizar o desempenho e a relevância das informações apresentadas aos usuários. Implementar filtros eficazes permitiu personalizar as consultas de acordo com as necessidades específicas do usuário, melhorando a eficiência e a usabilidade do aplicativo.
+
+- Animações Fluidas: A integração de animações fluidas foi crucial para proporcionar uma experiência de usuário mais agradável e interativa. A utilização de bibliotecas como react-native-reanimated e moti permitiu criar transições suaves entre telas e efeitos visuais que aumentaram a usabilidade e a atratividade do aplicativo.
+
+- Roteamento Navegacional: Dominar técnicas avançadas de roteamento foi fundamental para garantir a navegabilidade intuitiva dentro do aplicativo. A utilização do expo-router possibilitou implementar fluxos de navegação claros e eficientes, adaptados às necessidades específicas de cada tela e funcionalidade e permitindo o envio de parâmetros de Rota.
