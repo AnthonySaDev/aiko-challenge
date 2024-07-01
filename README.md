@@ -5,7 +5,7 @@ Meu sistema de monitoramento de ônibus em São Paulo utiliza a API do Olho Vivo
 
 ## Funcionalidades
 
-- Visualização em Tempo Real: O sistema proporciona uma visualização dinâmica da localização atual de todos os ônibus em operação na cidade de São Paulo. Utilizando dados atualizados da API do Olho Vivo, os usuários podem ver onde cada ônibus está em tempo real.
+- Visualização em Tempo Real: O sistema proporciona uma visualização dinâmica da localização atual de todos os ônibus em operação na cidade de São Paulo. Utilizando dados atualizados da API do Olho Vivo, os usuários podem ver onde cada ônibus está em tempo real, cada atualização é feita de minuto em minuto (60 segundos).
 
 - Detalhes dos Ônibus: Além da localização, o sistema fornece detalhes sobre cada ônibus, como número da linha e destino. Essas informações são essenciais para os passageiros planejarem suas viagens com precisão.
 
