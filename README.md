@@ -69,3 +69,5 @@ Durante o desenvolvimento deste projeto, adquiri valiosos conhecimentos e habili
 - Animações Fluidas: A integração de animações fluidas foi crucial para proporcionar uma experiência de usuário mais agradável e interativa. A utilização de bibliotecas como react-native-reanimated e moti permitiu criar transições suaves entre telas e efeitos visuais que aumentaram a usabilidade e a atratividade do aplicativo.
 
 - Roteamento Navegacional: Dominar técnicas avançadas de roteamento foi fundamental para garantir a navegabilidade intuitiva dentro do aplicativo. A utilização do expo-router possibilitou implementar fluxos de navegação claros e eficientes, adaptados às necessidades específicas de cada tela e funcionalidade e permitindo o envio de parâmetros de Rota.
+
+- Criação de testes unitários: Utilizando a React Native testing lybraly junto com a Jest consegui criar e testar a funcionalidade de meus componentes e corrigir alguns problemas que poderiam acontecer em cenários que não imaginava antes de escrever os testes.
