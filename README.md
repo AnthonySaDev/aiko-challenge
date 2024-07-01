@@ -32,35 +32,35 @@ Meu sistema de monitoramento de ônibus em São Paulo utiliza a API do Olho Vivo
 
 - SplashScreen
   
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/splash.png" alt="Splash Screen" width="300">
 
 - Onboard
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/onboard.png" alt="Onboard Screen" width="300">
 
 - Dashboard
   
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashboard.png" alt="Dashboard Screen" width="300">
 
 - Dashboard - Rotas
   
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashbord-rotas.png" alt="Dashboard Rotas Screen" width="300">
 
 - Dashboard - Corredores
   
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashboard-corredores.png" alt="Dashboard Corredores Screen" width="300">
 
 - Detalhes dos Corredores
   
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/detalhes.png" alt="Detalhes dos Corredores Screen" width="300">
 
 - Listagem das Linhas para a Rota selecionada
   
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/linhas.png" alt="Listagem das Linhas Screen" width="300">
 
 - Monitoramento de Ônibus
   
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/monitoramento.png" alt="Monitoramento de Ônibus Screen" width="300">
 
 
 ## Demonstração
