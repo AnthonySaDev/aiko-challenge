@@ -23,24 +23,13 @@ export default function Paradas() {
   const [previsoesPorParada, setPrevisoesPorParada] =
     useState<PrevisoesPorParada>({});
   const [selectedParada, setSelectedParada] = useState<Parada | null>(null);
-  const [mapRegion, setMapRegion] = useState({
+  const [mapRegion] = useState({
     latitude: -23.55052,
     longitude: -46.633308,
     latitudeDelta: LATITUDE_DELTA,
     longitudeDelta: LONGITUDE_DELTA,
   });
   const navigation = useNavigation();
-
-  const getParadasPorLinha = async () => {
-    try {
-      const response = await axios.get(
-        `https://aiko-olhovivo-proxy.aikodigital.io/Parada/BuscarParadasPorLinha?codigoLinha=${params.cl}`,
-      );
-      setParadas(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const getPosition = useCallback(async () => {
     try {
@@ -74,13 +63,23 @@ export default function Paradas() {
   );
 
   useEffect(() => {
+    const getParadasPorLinha = async () => {
+      try {
+        const response = await axios.get(
+          `https://aiko-olhovivo-proxy.aikodigital.io/Parada/BuscarParadasPorLinha?codigoLinha=${params.cl}`,
+        );
+        setParadas(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getPosition();
     getParadasPorLinha();
     const interval = setInterval(() => {
       getPosition();
     }, 10000);
     return () => clearInterval(interval);
-  }, [params.type, getPosition]);
+  }, [params.cl, getPosition]);
 
   useEffect(() => {
     if (paradas.length > 0) {

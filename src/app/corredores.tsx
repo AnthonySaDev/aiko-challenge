@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -5,17 +6,25 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import MapView, { Marker } from "react-native-maps";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import axios from "axios";
-import MapView, { Marker } from "react-native-maps";
-import { theme } from "../theme";
 import { Ionicons } from "@expo/vector-icons";
+import { theme } from "../theme";
+
+interface CorredorDetails {
+  nome: string;
+  localizacao: string;
+  latitude: number;
+  longitude: number;
+}
 
 export default function Corredores() {
-  const codigoCorredor = useLocalSearchParams();
-  const [corredorDetails, setCorredorDetails] = useState(null);
+  const codigoCorredor = useLocalSearchParams<{ nc: string }>();
+  const [corredorDetails, setCorredorDetails] =
+    useState<CorredorDetails | null>(null);
   const navigation = useNavigation();
+
   useEffect(() => {
     const fetchCorredorDetails = async () => {
       try {
@@ -27,7 +36,7 @@ export default function Corredores() {
           const nome = result.formatted_address;
           const latitude = result.geometry.location.lat;
           const longitude = result.geometry.location.lng;
-          const localizacao = result.place_id; // ou outro campo que você queira usar
+          const localizacao = result.place_id;
           setCorredorDetails({ nome, localizacao, latitude, longitude });
         }
       } catch (error) {
@@ -45,6 +54,7 @@ export default function Corredores() {
       </View>
     );
   }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>

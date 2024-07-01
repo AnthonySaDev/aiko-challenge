@@ -12,6 +12,7 @@ const Header: React.FC<HeaderProps> = ({ navigation }) => (
     <TouchableOpacity
       onPress={() => navigation.goBack()}
       style={styles.backButton}
+      testID="back-button"
     >
       <Ionicons name="arrow-back" size={24} color="white" />
     </TouchableOpacity>

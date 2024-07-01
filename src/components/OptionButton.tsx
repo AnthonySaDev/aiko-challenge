@@ -22,6 +22,7 @@ const OptionButton: React.FC<Props> = ({
       <TouchableOpacity
         style={[styles.optionButton, isSelected && styles.selectedOption]}
         onPress={onPress}
+        testID="option-button"
       >
         <FontAwesome name={iconName} size={24} color="white" />
       </TouchableOpacity>

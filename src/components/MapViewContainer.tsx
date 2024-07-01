@@ -4,7 +4,7 @@ import MapView, { Marker, Region } from "react-native-maps";
 import { Parada } from "../types/types";
 import { Ionicons } from "@expo/vector-icons";
 
-interface Position {
+export interface Position {
   hr: string;
   vs: {
     p: string;
@@ -30,7 +30,12 @@ const MapViewContainer: React.FC<MapViewContainerProps> = ({
 }) => (
   <View style={styles.mapContainer}>
     {position ? (
-      <MapView style={styles.map} initialRegion={mapRegion} zoomEnabled>
+      <MapView
+        style={styles.map}
+        initialRegion={mapRegion}
+        zoomEnabled
+        testID="map-view"
+      >
         {paradas.map((parada) => (
           <Marker
             key={parada.cp}

@@ -1,4 +1,3 @@
-
 # BusLive
 
 Meu sistema de monitoramento de ônibus em São Paulo utiliza a API do Olho Vivo para oferecer informações em tempo real sobre a localização e o status dos ônibus na cidade. Essa tecnologia permite aos usuários acompanhar de forma eficiente e precisa a movimentação dos ônibus, facilitando o planejamento de viagens e melhorando a experiência dos passageiros.
@@ -13,25 +12,18 @@ Meu sistema de monitoramento de ônibus em São Paulo utiliza a API do Olho Vivo
 
 - Mapa Interativo: Um mapa interativo permite que os usuários visualizem os ônibus em um contexto geográfico. Os ônibus são representados por marcadores que mostram informações relevantes ao serem clicados, facilitando a navegação e a compreensão da rede de transporte público.
 
-
-
-
-
 ## Benefícios para os Usuários:
 
+- Planejamento de Viagens Eficiente: Os usuários podem verificar o status dos ônibus antes de sair, economizando tempo e evitando esperas desnecessárias.
 
-* Planejamento de Viagens Eficiente: Os usuários podem verificar o status dos ônibus antes de sair, economizando tempo e evitando esperas desnecessárias.
+- Melhoria na Experiência do Passageiro: Com acesso a informações precisas e atualizadas, os passageiros podem viajar com mais confiança e conveniência.
 
-* Melhoria na Experiência do Passageiro: Com acesso a informações precisas e atualizadas, os passageiros podem viajar com mais confiança e conveniência.
-
-* Redução do Impacto Ambiental: Ao otimizar o uso do transporte público, o sistema contribui para a redução do tráfego e das emissões de carbono na cidade.
-
-
+- Redução do Impacto Ambiental: Ao otimizar o uso do transporte público, o sistema contribui para a redução do tráfego e das emissões de carbono na cidade.
 
 ## Screenshots
 
 - SplashScreen
-  
+
 <img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/splash.png" alt="Splash Screen" width="500">
 
 - Onboard
@@ -39,34 +31,32 @@ Meu sistema de monitoramento de ônibus em São Paulo utiliza a API do Olho Vivo
 <img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/onboard.png" alt="Onboard Screen" width="500">
 
 - Dashboard
-  
+
 <img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashboard.png" alt="Dashboard Screen" width="500">
 
 - Dashboard - Rotas
-  
+
 <img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashbord-rotas.png" alt="Dashboard Rotas Screen" width="500">
 
 - Dashboard - Corredores
-  
+
 <img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/dashboard-corredores.png" alt="Dashboard Corredores Screen" width="500">
 
 - Detalhes dos Corredores
-  
+
 <img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/detalhes.png" alt="Detalhes dos Corredores Screen" width="500">
 
 - Listagem das Linhas para a Rota selecionada
-  
+
 <img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/linhas.png" alt="Listagem das Linhas Screen" width="500">
 
 - Monitoramento de Ônibus
-  
-<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/monitoramento.png" alt="Monitoramento de Ônibus Screen" width="500">
 
+<img src="https://github.com/AnthonySaDev/aiko-challenge/blob/main/images/monitoramento.png" alt="Monitoramento de Ônibus Screen" width="500">
 
 ## Demonstração
 
 [Assista ao vídeo de demonstração](https://youtu.be/9MHbP2RgKfI) do aplicativo BusLive.
-
 
 ## Aprendizados
 

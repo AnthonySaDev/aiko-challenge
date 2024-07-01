@@ -25,20 +25,20 @@ const Linhas: React.FC = () => {
   const params = useLocalSearchParams();
   const [linhas, setLinhas] = useState<Linha[]>([]);
   const navigation = useNavigation();
-  const handleBuscaPorTermo = async () => {
-    try {
-      const response = await axios.get<Linha[]>(
-        `https://aiko-olhovivo-proxy.aikodigital.io/Linha/Buscar?termosBusca=${params.item}`,
-      );
-      setLinhas(response.data);
-    } catch (error) {
-      console.log("Erro ao buscar linhas:", error);
-    }
-  };
 
   useEffect(() => {
+    const handleBuscaPorTermo = async () => {
+      try {
+        const response = await axios.get<Linha[]>(
+          `https://aiko-olhovivo-proxy.aikodigital.io/Linha/Buscar?termosBusca=${params.item}`,
+        );
+        setLinhas(response.data);
+      } catch (error) {
+        console.log("Erro ao buscar linhas:", error);
+      }
+    };
     handleBuscaPorTermo();
-  }, []);
+  }, [params.item]);
 
   const handleSearchParadas = (item: number) => {
     router.push({
